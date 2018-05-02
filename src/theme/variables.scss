@@ -23,6 +23,14 @@ $app-direction: ltr;
 // http://ionicframework.com/docs/theming/overriding-ionic-variables/
 
 $toolbar-background: #222;
+$tabs-background: #222;
+$tabs-border-color: #ccc;
+$tabs-tab-color-inactive: #fff;
+$tabs-md-tab-color-inactive: #fff;
+$font-family-base: "Raleway", sans-serif;
+$font-family-ios-base: $font-family-base;
+$font-family-md-base: $font-family-base;
+$font-family-wp-base: $font-family-base;
 
 
 // Named Color Variables
@@ -35,10 +43,10 @@ $toolbar-background: #222;
 
 $colors: (
   primary:    #c00,
-  secondary:  #f00,
+  secondary:  #a00,
   danger:     #f00,
-  light:      #f00,
-  dark:       #f00
+  light:      #aaa,
+  dark:       #222
 );
 
 
@@ -86,3 +94,4 @@ $colors: (
 
 @import "roboto";
 @import "noto-sans";
+@import "../assets/fonts/raleway";

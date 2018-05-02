@@ -1,3 +1,19 @@
 page-home {
-
+  .event-highlight {
+  	background-color: #c00;
+  	color: white;
+  	font-weight: 900;
+  	font-size: $font-size-large;
+  }
+  .event-open {
+  	background-color: color($colors, 'dark');
+  	color: white;
+  }
+  .event-past {
+  	color: color($colors, 'light');;
+  }
+  .muted-small {
+  	font-size: $font-size-small;
+	color: color($colors, 'light');
+  }
 }

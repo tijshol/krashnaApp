@@ -1,1 +1,36 @@
-<ion-nav [root]="rootPage"></ion-nav>
+<ion-nav #mainContent [root]="rootPage"></ion-nav>
+
+<ion-menu [content]="mainContent">
+  <ion-content>
+    <ion-list padding>
+      <button ion-item>
+      	<ion-icon name="contacts"></ion-icon>
+      	Contacts
+      </button>
+      <button ion-item>
+      	<ion-icon name="beer"></ion-icon>
+      	Pils
+      </button>
+      <button ion-item>
+      	<ion-icon name="beer"></ion-icon>
+      	Pils
+      </button>
+      <button ion-item>
+      	<ion-icon name="beer"></ion-icon>
+      	Pils
+      </button>
+      <button ion-item>
+      	<ion-icon name="beer"></ion-icon>
+      	Pils
+      </button>
+      <button ion-item>
+      	<ion-icon name="beer"></ion-icon>
+      	Pils
+      </button>
+      <button ion-item>
+      	<ion-icon name="settings"></ion-icon>
+      	Settings
+      </button>
+    </ion-list>
+  </ion-content>
+</ion-menu>
