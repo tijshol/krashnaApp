@@ -32,7 +32,8 @@
   </ion-list>
   <div padding><h2>Schedule</h2></div>
   <ion-list>
-    <ion-list-header *ngFor="let item of eventList; let i = index" no-lines>
+    <div *ngFor="let item of eventList; let i = index">
+      <ion-list-header *ngIf = "!item.hide" no-lines>
       <button ion-item (click)="openEvent(i)" [ngClass]="{
       'event-highlight': item.highlight,
       'event-open': item.open,
@@ -47,7 +48,7 @@
       <ion-item *ngIf="item.open">
         <ion-list>
           <ion-item no-padding style="font-weight: 500;">
-            <p float-left>{{ item.date }} | {{ item.time }} <span *ngIf="item.timeEnd"> - {{ item.timeEnd }}</span></p>
+            <p float-left>{{ item.timestamp | date:"EE dd-MM" }} | {{ item.time }} <span *ngIf="item.timeEnd"> - {{ item.timeEnd }}</span></p>
             <p float-right *ngIf="item.group">{{ item.group }}</p>
           </ion-item>
           <ion-item no-padding style="font-weight: 500;" text-wrap>
@@ -59,7 +60,7 @@
         </ion-list>
         
       </ion-item>
-
-    </ion-list-header>
+      </ion-list-header>
+    </div>
   </ion-list>
 </ion-content>
