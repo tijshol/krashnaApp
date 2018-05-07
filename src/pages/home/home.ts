@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
-import { Http } from '@angular/http';
 import { events } from '../../assets/json/events-test.js';
-import { notifications } from '../../assets/json/notifications-test.js';
+import { NotificationService } from '../../services/notifications.js';
 
 @Component({
   selector: 'page-home',
@@ -11,7 +10,7 @@ export class HomePage {
   eventList: any[];
   notificationList: any[];
 
-  constructor(private http: Http) {
+  constructor() {
     // Fetch event list (local)
     this.eventList = events;
 
@@ -34,7 +33,8 @@ export class HomePage {
     this.eventList[this.eventList.length-1].hide = false;
 
     // // Fetch notifications (currently also local)
-    this.notificationList = notifications;
+    const notificationService = new NotificationService(false);
+    this.notificationList = notificationService.get();
   }
 
   openEvent(i) {
