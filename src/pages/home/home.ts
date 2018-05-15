@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { events } from '../../assets/json/events-test.js';
-import { NotificationService } from '../../services/notifications.js';
+import { NotificationService } from '../../services/notifications.ts';
 
 @Component({
   selector: 'page-home',
@@ -33,7 +33,7 @@ export class HomePage {
     this.eventList[this.eventList.length-1].hide = false;
 
     // // Fetch notifications (currently also local)
-    const notificationService = new NotificationService(false);
+    const notificationService = new NotificationService();
     this.notificationList = notificationService.get();
   }
 
