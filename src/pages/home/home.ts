@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
-import { events } from '../../assets/json/events-test.js';
-import { NotificationService } from '../../services/notifications.ts';
+import { events } from '../../assets/json/events.js';
+import { NotificationService } from '../../services/notifications';
+import { HTTP } from '@ionic-native/http';
 
 @Component({
   selector: 'page-home',
@@ -10,12 +11,12 @@ export class HomePage {
   eventList: any[];
   notificationList: any[];
 
-  constructor() {
+  constructor(private http: HTTP) {
     // Fetch event list (local)
     this.eventList = events;
 
     const now = new Date();
-    let previousItem = {};
+    let previousItem = {past: true};
 
     for (let item of this.eventList) {
       const timestamp = new Date(item.date + ' ' + item.time);
@@ -33,7 +34,7 @@ export class HomePage {
     this.eventList[this.eventList.length-1].hide = false;
 
     // // Fetch notifications (currently also local)
-    const notificationService = new NotificationService();
+    const notificationService = new NotificationService(http);
     this.notificationList = notificationService.get();
   }
 
