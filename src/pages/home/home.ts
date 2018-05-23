@@ -13,10 +13,11 @@ export class HomePage {
   dateTransitions: any[];
   errMessage: string;
 
-  constructor(private http: HTTP) {
+  constructor(public http: HTTP) {
     // Fetch event list (local)
     this.eventList = events;
     this.dateTransitions = [];
+    this.notificationList = [];
     this.errMessage = '';
 
     const now = new Date();
@@ -44,9 +45,14 @@ export class HomePage {
     this.eventList[this.eventList.length-1].hide = false;
 
     // Fetch notifications (works only on device)
-    this.notificationList = [];
-    const notificationService = new NotificationService(http);
-    notificationService.get().then(d => {
+    this.fetchNotifications();
+  }
+
+  fetchNotifications() {
+    const notificationService = new NotificationService(this.http);
+    return notificationService.get().then(d => {
+          this.errMessage = '';
+          this.notificationList = [];
           const values = JSON.parse(d.data).values;
           const fields = values[0];
           for (let i = 1; i < values.length; i++) {
@@ -81,9 +87,9 @@ export class HomePage {
   }
 
   doRefresh(refresher) {
-    setTimeout(() => {
+    this.fetchNotifications().then(() => {
       refresher.complete();
-    }, 2000);
+    });
   }
 
   }

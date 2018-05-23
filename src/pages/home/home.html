@@ -23,7 +23,7 @@
     <p>{{ errMessage }}</p>
   </ion-card-content>
   </ion-card>
-  <ion-list *ngIf="!errMessage">
+  <ion-list *ngIf="notificationList.length > 0">
     <ion-item-sliding #item *ngFor="let note of notificationList; let i = index" text-wrap>
       <ion-item no-lines>
         <ion-icon item-left name="alert"></ion-icon>
