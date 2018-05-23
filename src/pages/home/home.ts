@@ -11,13 +11,13 @@ export class HomePage {
   eventList: any[];
   notificationList: any[];
   dateTransitions: any[];
-  errMessage: boolean;
+  errMessage: string;
 
   constructor(private http: HTTP) {
     // Fetch event list (local)
     this.eventList = events;
     this.dateTransitions = [];
-    this.errMessage = false;
+    this.errMessage = '';
 
     const now = new Date();
     let previousItem = {past: true, timestamp: new Date(0)};
@@ -58,7 +58,12 @@ export class HomePage {
           }
         })
         .catch(e => {
-          this.errMessage = true;
+          if (typeof(e) === 'object' && e.error !== undefined)
+            this.errMessage = e.error.message;
+          else if (typeof(e) === 'string')
+            this.errMessage = e;
+          else
+            this.errMessage = 'unknown error';
       });
   }
 

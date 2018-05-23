@@ -22,9 +22,10 @@
     <ion-refresher-content></ion-refresher-content>
   </ion-refresher>
   
-  <ion-card *ngIf="errMessage">
+  <ion-card *ngIf="errMessage.length > 0">
     <ion-card-content class="muted-small">
-    Whoops! Something went wrong loading the news feed.
+    Whoops! Something went wrong loading the news feed:
+    <p>{{ errMessage }}</p>
   </ion-card-content>
   </ion-card>
   <ion-list *ngIf="!errMessage">
