@@ -17,5 +17,34 @@
 </ion-header>
 
 <ion-content>
-  Challenges page
+  <ion-list>
+    <ion-list-header>
+      <h1>General</h1>
+    </ion-list-header>
+    <ion-item *ngFor="let challenge of challenges.general; let i = index">
+      <h2><ion-icon name="trophy"></ion-icon> {{ challenge.name }}</h2>
+      <p text-wrap>{{ challenge.description }}</p>
+    </ion-item>
+    <ion-list-header>
+      <h1>Bratislava</h1>
+    </ion-list-header>
+    <ion-item *ngFor="let challenge of challenges.bratislava; let i = index">
+      <h2><ion-icon name="trophy"></ion-icon> {{ challenge.name }}</h2>
+      <p text-wrap>{{ challenge.description }}</p>
+    </ion-item>
+    <ion-list-header>
+      <h1>Brno</h1>
+    </ion-list-header>
+    <ion-item *ngFor="let challenge of challenges.brno; let i = index">
+      <h2><ion-icon name="trophy"></ion-icon> {{ challenge.name }}</h2>
+      <p text-wrap>{{ challenge.description }}</p>
+    </ion-item>
+    <ion-list-header>
+      <h1>Vienna</h1>
+    </ion-list-header>
+    <ion-item *ngFor="let challenge of challenges.vienna; let i = index">
+      <h2><ion-icon name="trophy"></ion-icon> {{ challenge.name }}</h2>
+      <p text-wrap>{{ challenge.description }}</p>
+    </ion-item>
+  </ion-list>
 </ion-content>

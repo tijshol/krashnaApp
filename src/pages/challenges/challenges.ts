@@ -3,6 +3,8 @@ import { NavController } from 'ionic-angular';
 
 import { HomePage } from '../home/home';
 
+import { challenges } from '../../assets/json/challenges.js';
+
 @Component({
   selector: 'page-challenges',
   templateUrl: 'challenges.html'
@@ -10,6 +12,7 @@ import { HomePage } from '../home/home';
 export class ChallengesPage {
 
   constructor(public navCtrl: NavController) {
+  	this.challenges = challenges;
   }
 
   goHome() {
