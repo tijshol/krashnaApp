@@ -3,26 +3,40 @@
 <ion-menu [content]="mainContent" persistent="true">
   <ion-content>
     <ion-list padding>
-      <button ion-item>
-      	<ion-icon name="contacts"></ion-icon>
-      	Contacts
-      </button>
-      <button ion-item>
-      	<ion-icon name="help"></ion-icon>
-      	Bratislava
-      </button>
-      <button ion-item>
-      	<ion-icon name="help"></ion-icon>
-      	Brno
-      </button>
-      <button ion-item>
-      	<ion-icon name="help"></ion-icon>
-      	Vienna
-      </button>
-      <button ion-item>
-      	<ion-icon name="settings"></ion-icon>
-      	Settings
-      </button>
+        <button ion-item (click)="goTo('home')" menuToggle>
+          <ion-icon name="home"></ion-icon>
+          Home
+        </button>
+      <ion-list-header no-lines>
+        Cities
+      </ion-list-header>
+        <button ion-item (click)="goTo('bratislava')" menuToggle>
+          <ion-icon name="help"></ion-icon>
+          Bratislava
+        </button>
+        <button ion-item (click)="goTo('brno')" menuToggle>
+          <ion-icon name="help"></ion-icon>
+          Brno
+        </button>
+        <button ion-item (click)="goTo('vienna')" menuToggle>
+          <ion-icon name="help"></ion-icon>
+          Vienna
+        </button>
+      <ion-list-header no-lines>
+        Other
+      </ion-list-header>
+        <button ion-item (click)="goTo('challenges')" menuToggle>
+          <ion-icon name="trophy"></ion-icon>
+          Challenges
+        </button>
+        <button ion-item (click)="goTo('packing')" menuToggle>
+          <ion-icon name="briefcase"></ion-icon>
+          Packing list
+        </button>
+        <button ion-item (click)="goTo('contacts')" menuToggle>
+        	<ion-icon name="contacts"></ion-icon>
+        	Contacts
+        </button>
     </ion-list>
   </ion-content>
 </ion-menu>

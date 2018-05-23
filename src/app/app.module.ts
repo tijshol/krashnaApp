@@ -4,6 +4,11 @@ import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
 
 import { HomePage } from '../pages/home/home';
+import { ChallengesPage } from '../pages/challenges/challenges';
+import { ContactsPage } from '../pages/contacts/contacts';
+import { CitiesPage } from '../pages/cities/cities';
+import { PackingPage } from '../pages/packing/packing';
+
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { HTTP } from '@ionic-native/http';
@@ -13,6 +18,10 @@ import { HTTP } from '@ionic-native/http';
   declarations: [
     MyApp,
     HomePage,
+    ChallengesPage,
+    ContactsPage,
+    CitiesPage,
+    PackingPage
   ],
   imports: [
     BrowserModule,
@@ -22,6 +31,10 @@ import { HTTP } from '@ionic-native/http';
   entryComponents: [
     MyApp,
     HomePage,
+    ChallengesPage,
+    ContactsPage,
+    CitiesPage,
+    PackingPage
   ],
   providers: [
     StatusBar,
