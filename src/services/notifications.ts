@@ -6,29 +6,15 @@ export class NotificationService {
 
 	constructor(private http) {}
 
+	getApiLink() {
+		return `https://sheets.googleapis.com/v4/spreadsheets/${apiData.sheetId}/values/A1:B10?key=${apiData.key}`;
+	}
+
 	get() {
 		if (TEST_MODE) {
 			return testValues;
 		} else {
-			this.http.get("https://sheets.googleapis.com/v4/spreadsheets/${apiData.sheetId}/values/A1:B10?key=${apiData.key}", {}, {})
-			.then(data => {
-
-				return data;
-				// console.log(data);
-			 //    console.log(data.status);
-			 //    console.log(data.data); // data received by server
-			 //    console.log(data.headers);
-
-			  })
-			  .catch(error => {
-
-			  	return error;
-			 //  	console.log(error);
-				// console.log(error.status);
-				// console.log(error.error); // error message as string
-				// console.log(error.headers);
-
-			});
+			return this.http.get(`https://sheets.googleapis.com/v4/spreadsheets/${apiData.sheetId}/values/A1:B10?key=${apiData.key}`, {}, {})
 		}
 	}
 }

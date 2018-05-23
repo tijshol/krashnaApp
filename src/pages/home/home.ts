@@ -10,13 +10,17 @@ import { HTTP } from '@ionic-native/http';
 export class HomePage {
   eventList: any[];
   notificationList: any[];
+  dateTransitions: any[];
+  errMessage: boolean;
 
   constructor(private http: HTTP) {
     // Fetch event list (local)
     this.eventList = events;
+    this.dateTransitions = [];
+    this.errMessage = false;
 
     const now = new Date();
-    let previousItem = {past: true};
+    let previousItem = {past: true, timestamp: new Date(0)};
 
     for (let item of this.eventList) {
       const timestamp = new Date(item.date + ' ' + item.time);
@@ -24,6 +28,12 @@ export class HomePage {
       item.past = now > timestamp;
       if (previousItem.past && !item.past)
         item.highlight = true;
+
+      if (!(previousItem.timestamp.getFullYear() === item.timestamp.getFullYear()
+         && previousItem.timestamp.getMonth() === item.timestamp.getMonth()
+         && previousItem.timestamp.getDate() === item.timestamp.getDate()))
+        this.dateTransitions.push(item.id);
+
       previousItem = item;
     }
 
@@ -33,9 +43,27 @@ export class HomePage {
     }
     this.eventList[this.eventList.length-1].hide = false;
 
-    // // Fetch notifications (currently also local)
+    // Fetch notifications (works only on device)
+    this.notificationList = [];
     const notificationService = new NotificationService(http);
-    this.notificationList = notificationService.get();
+    notificationService.get().then(d => {
+          const values = JSON.parse(d.data).values;
+          const fields = values[0];
+          for (let i = 1; i < values.length; i++) {
+            const n = {};
+            for (let j = 0; j < fields.length; j++) {
+              n[fields[j]] = values[i][j];
+            }
+            this.notificationList.push(n);
+          }
+        })
+        .catch(e => {
+          this.errMessage = true;
+      });
+  }
+
+  isDateTransition(i) {
+    return this.dateTransitions.includes(i)
   }
 
   openEvent(i) {

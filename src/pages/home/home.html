@@ -1,9 +1,15 @@
 <ion-header>
   <ion-navbar>
-    <button float-left ion-button icon-only menuToggle>
+    <ion-buttons left>
+    <button ion-button icon-only menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-
+    </ion-buttons><!-- 
+    <ion-buttons end>
+    <button ion-button icon-only>
+      <ion-icon name="home"></ion-icon>
+    </button>
+    </ion-buttons> -->
     <ion-title>
       Home
     </ion-title>
@@ -15,8 +21,13 @@
   <ion-refresher (ionRefresh)="doRefresh($event)">
     <ion-refresher-content></ion-refresher-content>
   </ion-refresher>
-
-  <ion-list>
+  
+  <ion-card *ngIf="errMessage">
+    <ion-card-content class="muted-small">
+    Whoops! Something went wrong loading the news feed.
+  </ion-card-content>
+  </ion-card>
+  <ion-list *ngIf="!errMessage">
     <ion-item-sliding #item *ngFor="let note of notificationList; let i = index" text-wrap>
       <ion-item no-lines>
         <ion-icon item-left name="alert"></ion-icon>
@@ -30,37 +41,40 @@
       </ion-item-options>
     </ion-item-sliding>
   </ion-list>
-  <div padding><h2>COME ON YOU PIECE OF SHIT</h2></div>
+  <div padding><h2>Schedule</h2></div>
   <ion-list>
     <div *ngFor="let item of eventList; let i = index">
-      <ion-list-header *ngIf = "!item.hide" no-lines>
-      <button ion-item (click)="openEvent(i)" [ngClass]="{
-      'event-highlight': item.highlight,
-      'event-open': item.open,
-      'event-past': item.past
-    }">
-        <ion-icon item-left name="arrow-forward" *ngIf="!item.open"></ion-icon>
-        <ion-icon item-left name="arrow-down" *ngIf="item.open"></ion-icon>
-          <div float-left style="display: inline-block;">{{ item.time }}</div>
-          <div float-right style="display: inline-block;">{{ item.name }}</div>
-      </button>
+      <div *ngIf = "!item.hide">
+      <ion-item *ngIf="isDateTransition(i)" class="muted-small">{{ item.timestamp | date:"MMMM d" }}</ion-item>
+      <ion-list-header no-lines>
+        <button ion-item (click)="openEvent(i)" [ngClass]="{
+        'event-highlight': item.highlight,
+        'event-open': item.open,
+        'event-past': item.past
+      }">
+          <ion-icon item-left name="arrow-forward" *ngIf="!item.open"></ion-icon>
+          <ion-icon item-left name="arrow-down" *ngIf="item.open"></ion-icon>
+            <div float-left style="display: inline-block;">{{ item.time }}</div>
+            <div float-right style="display: inline-block;">{{ item.name }}</div>
+        </button>
 
-      <ion-item *ngIf="item.open">
-        <ion-list>
-          <ion-item no-padding style="font-weight: 500;">
-            <p float-left>{{ item.timestamp | date:"EE dd-MM" }} | {{ item.time }} <span *ngIf="item.timeEnd"> - {{ item.timeEnd }}</span></p>
-            <p float-right *ngIf="item.group">{{ item.group }}</p>
-          </ion-item>
-          <ion-item no-padding style="font-weight: 500;" text-wrap>
-            <p>{{ item.location }}</p>
-          </ion-item>
-          <ion-item no-padding text-wrap *ngIf="item.description">
-            <p>{{ item.description }}</p>
-          </ion-item>
-        </ion-list>
-        
-      </ion-item>
+        <ion-item *ngIf="item.open">
+          <ion-list>
+            <ion-item no-padding style="font-weight: 500;">
+              <p float-left>{{ item.timestamp | date:"EE dd-MM" }} | {{ item.time }} <span *ngIf="item.timeEnd"> - {{ item.timeEnd }}</span></p>
+              <p float-right *ngIf="item.group">{{ item.group }}</p>
+            </ion-item>
+            <ion-item no-padding style="font-weight: 500;" text-wrap>
+              <p>{{ item.location }}</p>
+            </ion-item>
+            <ion-item no-padding text-wrap *ngIf="item.description">
+              <p>{{ item.description }}</p>
+            </ion-item>
+          </ion-list>
+          
+        </ion-item>
       </ion-list-header>
+      </div>
     </div>
   </ion-list>
 </ion-content>

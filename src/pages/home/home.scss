@@ -1,6 +1,6 @@
 page-home {
   .event-highlight {
-  	background-color: #c00;
+  	background-color: color($colors, 'primary');
   	color: white;
   	font-weight: 900;
   	font-size: $font-size-large;
