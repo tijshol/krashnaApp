@@ -12,6 +12,7 @@ export class HomePage {
   notificationList: any[];
   dateTransitions: any[];
   errMessage: string;
+  isLoading: boolean;
 
   constructor(public http: HTTP) {
     // Fetch event list (local)
@@ -44,13 +45,15 @@ export class HomePage {
     }
     this.eventList[this.eventList.length-1].hide = false;
 
+    this.notificationService = new NotificationService(this.http);
+
     // Fetch notifications (works only on device)
+    this.isLoading = true;
     this.fetchNotifications();
   }
 
   fetchNotifications() {
-    const notificationService = new NotificationService(this.http);
-    return notificationService.get().then(d => {
+    return this.notificationService.get().then(d => {
           this.errMessage = '';
           this.notificationList = [];
           const values = JSON.parse(d.data).values;
@@ -62,6 +65,7 @@ export class HomePage {
             }
             this.notificationList.push(n);
           }
+          this.isLoading = false;
         })
         .catch(e => {
           if (typeof(e) === 'object' && e.error !== undefined)
@@ -70,6 +74,7 @@ export class HomePage {
             this.errMessage = e;
           else
             this.errMessage = 'unknown error';
+          this.isLoading = false;
       });
   }
 

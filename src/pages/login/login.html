@@ -2,12 +2,16 @@
 
 <ion-content>
   <div class="text-middle" text-center>
-    <h1 class="lock"><ion-icon name="lock"></ion-icon></h1>
+    <h1 class="lock">
+      <ion-icon *ngIf="!passIsRight" name="lock"></ion-icon>
+      <ion-icon *ngIf="passIsRight" name="unlock"></ion-icon>
+    </h1>
     <h3>Unlock this app</h3>
-    <p>Please supply the code given to you by the Tourcie.</p>
+    <p class="muted">Please supply the code given to you by the Tourcie.</p>
+    <p *ngIf="passIsWrong" class="error">Sorry, that's not right.</p>
     <form (ngSubmit)="unlock()">
       <ion-item>
-        <ion-input type="text" [(ngModel)]="password" name="password" placeholder="Code..." text-center></ion-input>
+        <ion-input type="text" [(ngModel)]="password" name="password" placeholder="Code..." text-center block></ion-input>
       </ion-item>
       <button ion-button type="submit" block>Unlock</button>
     </form>

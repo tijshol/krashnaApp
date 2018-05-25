@@ -17,6 +17,7 @@
     <ion-refresher-content></ion-refresher-content>
   </ion-refresher>
   
+  <ion-item padding text-center no-lines *ngIf="isLoading"><ion-spinner></ion-spinner></ion-item>
   <ion-card *ngIf="errMessage.length > 0">
     <ion-card-content class="muted-small">
     Whoops! Something went wrong loading the news feed:
