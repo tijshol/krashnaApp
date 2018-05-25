@@ -13,6 +13,7 @@ export class HomePage {
   dateTransitions: any[];
   errMessage: string;
   isLoading: boolean;
+  showAllNotifications: boolean;
 
   constructor(public http: HTTP) {
     // Fetch event list (local)
@@ -59,7 +60,7 @@ export class HomePage {
           const values = JSON.parse(d.data).values;
           const fields = values[0];
           for (let i = 1; i < values.length; i++) {
-            const n = {};
+            const n = {open: false};
             for (let j = 0; j < fields.length; j++) {
               n[fields[j]] = values[i][j];
             }
@@ -86,10 +87,13 @@ export class HomePage {
     for (let j = 0; j < this.eventList.length; j++) {
         this.eventList[j].open = i == j ? !this.eventList[j].open : 0;
       }
-	}
-  deleteNotification(i) {
-    this.notificationList.splice(i,1);
   }
+
+  openNotification(i) {
+    for (let j = 0; j < this.notificationList.length; j++) {
+        this.notificationList[j].open = i == j ? !this.notificationList[j].open : 0;
+      }
+	}
 
   doRefresh(refresher) {
     this.fetchNotifications().then(() => {

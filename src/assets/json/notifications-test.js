@@ -1,14 +1,3 @@
-export const notifications = [
-	{
-		text: "Oh nee alles is kapot",
-		timestamp: "2018/05/02 15:56"
-	},
-	{
-		text: "Pils bij Jasper",
-		timestamp: "2018/05/02 13:56"
-	},
-	{
-		text: "Alle orkestleden zo snel mogelijk verzamelen bij de tenoren",
-		timestamp: "2018/05/02 10:56"
-	}
-];
+export const notifications = {
+	data: `{ "range": "test!A1:C10", "majorDimension": "ROWS", "values": [ [ "timestamp", "text", "longText" ], [ "20-5-2018", "These are the test notifications", "We need to test the short text as well as the really long text that goes right under the short text. So this is what it would look like if you were to put a load of text into a small notification box. Pretty nice. At least, if Tijs got his CSS right." ], [ "21-5-2018", "They test the notification system" ], [ "22-5-2018", "Everything should work as desired", "This long text is short. Bugger." ], [ "23-5-2018", "Good news: we're going on tour!" ], [ "24-5-2018", "I love tours, especially lustrum ones" ], [ "25-5-2018", "Teddy is bae" ], [ "26-5-2018", "The Tourcie are nice people", "Even though they pay me jack shit for the hours of work I put into this app" ], [ "27-5-2018", "Bratislava sounds like a kind of disease", "But I'm sure the city is pretty nice and full of cool people that speak a weird language. What was it? Slovakian?" ], [ "28-5-2018", "Brno looks like it was misspelled" ] ] }`
+};

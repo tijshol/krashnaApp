@@ -16,4 +16,10 @@ page-home {
   	font-size: $font-size-small;
 	color: color($colors, 'light');
   }
+  .wrap-text {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    width: 95%;
+  }
 }

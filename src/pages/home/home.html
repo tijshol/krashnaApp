@@ -25,18 +25,22 @@
   </ion-card-content>
   </ion-card>
   <ion-list *ngIf="notificationList.length > 0">
-    <ion-item-sliding #item *ngFor="let note of notificationList; let i = index" text-wrap>
-      <ion-item no-lines>
-        <ion-icon item-left name="alert"></ion-icon>
-        <p>{{ note.text }}</p>
-        <p class="muted-small" float-right>{{ note.timestamp }}</p>
-      </ion-item>
-      <ion-item-options>
-        <button ion-button icon-only color="danger" (click)="deleteNotification(i)">
-          <ion-icon name=trash></ion-icon>
-        </button>
-      </ion-item-options>
-    </ion-item-sliding>
+    <div *ngFor="let note of notificationList; let i = index">
+    <ion-item no-lines text-wrap *ngIf="i < 3 || showAllNotifications" (click)="openNotification(i)">
+      <ion-icon item-left name="alert"></ion-icon>
+      <h3 float-left>{{ note.text }}</h3>
+      <p class="muted-small" float-right>{{ note.timestamp }}</p>
+      <p class="muted-small" float-left [ngClass]="{'wrap-text': !note.open}">{{ note.longText }}</p>
+    </ion-item>
+    </div>
+    <div *ngIf="notificationList.length > 3">
+      <button ion-button full outline (click)="showAllNotifications = !showAllNotifications" *ngIf="!showAllNotifications">
+        Show {{ notificationList.length - 3 }} more
+      </button>
+      <button ion-button full outline (click)="showAllNotifications = !showAllNotifications" *ngIf="showAllNotifications">
+        Hide
+      </button>
+    </div>
   </ion-list>
   <div padding><h2>Schedule</h2></div>
   <ion-list>
