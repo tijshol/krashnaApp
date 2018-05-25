@@ -8,10 +8,12 @@ import { ChallengesPage } from '../pages/challenges/challenges';
 import { ContactsPage } from '../pages/contacts/contacts';
 import { CitiesPage } from '../pages/cities/cities';
 import { PackingPage } from '../pages/packing/packing';
+import { LoginPage } from '../pages/login/login';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { HTTP } from '@ionic-native/http';
+import { IonicStorageModule } from '@ionic/storage';
 
 
 @NgModule({
@@ -21,11 +23,13 @@ import { HTTP } from '@ionic-native/http';
     ChallengesPage,
     ContactsPage,
     CitiesPage,
-    PackingPage
+    PackingPage,
+    LoginPage
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp),
+    IonicStorageModule.forRoot()
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -34,7 +38,8 @@ import { HTTP } from '@ionic-native/http';
     ChallengesPage,
     ContactsPage,
     CitiesPage,
-    PackingPage
+    PackingPage,
+    LoginPage
   ],
   providers: [
     StatusBar,
