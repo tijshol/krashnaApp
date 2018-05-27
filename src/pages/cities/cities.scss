@@ -1,3 +1,14 @@
 page-cities {
-
+	.city-name-box {
+		margin-top: -60px;
+		color: white;
+	}
+	.city-name {
+		font-weight: 900;
+		text-shadow: 2px 2px 2px black;
+	}
+	.muted-small {
+		font-size: $font-size-small;
+		color: color($colors, 'light');
+	}
 }

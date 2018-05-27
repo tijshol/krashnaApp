@@ -11,11 +11,50 @@
     </button>
     </ion-buttons>
     <ion-title>
-      Cities: {{ city }}
+      Cities
     </ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content>
-  {{ city }} page
+<img *ngIf="city === 'bratislava'" src="../../assets/imgs/bratislava.jpg" alt="">
+<img *ngIf="city === 'brno'" src="../../assets/imgs/brno.jpg" alt="">
+<img *ngIf="city === 'vienna'" src="../../assets/imgs/vienna.jpg" alt="">
+<div padding class="city-name-box">
+  <h1 class="city-name">{{ info.name }}</h1>
+</div>
+<ion-card>
+  <ion-card-header><ion-icon float-right name="information-circle"></ion-icon> General Info</ion-card-header>
+  <ion-card-content>
+    <p>{{ info.general }}</p>
+  </ion-card-content>
+</ion-card>
+<ion-card *ngIf="info.teddyTips.length > 0">
+  <ion-card-header><ion-icon float-right name="paw"></ion-icon> Teddy's Tips</ion-card-header>
+  <ion-card-content>
+    <ion-list>
+      <ion-item *ngFor="let tip of info.teddyTips; let i = index">
+        <h2>{{ tip.title }}</h2>
+        <p>{{ tip.text }}</p>
+      </ion-item>
+    </ion-list>
+  </ion-card-content>
+</ion-card>
+<ion-card *ngIf="info.hostel !== 'NONE'">
+  <ion-card-header><ion-icon float-right name="fn-hostel"></ion-icon> Hostel</ion-card-header>
+  <ion-card-content>
+    <ion-list>
+      <ion-item>
+        <h3>{{ info.hostel.name }}</h3>
+      </ion-item>
+      <ion-item>
+        <p float-left><ion-icon name="map"></ion-icon> {{ info.hostel.location }}</p>
+        <p float-right><ion-icon name="call"></ion-icon>{{ info.hostel.tel }}</p>
+      </ion-item>
+      <ion-item>
+        <p class="muted-small">{{ info.hostel.description }}</p>
+      </ion-item>
+    </ion-list>
+  </ion-card-content>
+</ion-card>
 </ion-content>
