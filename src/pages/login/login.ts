@@ -25,6 +25,7 @@ export class LoginPage {
       this.passIsWrong = false;
       this.passIsRight = true;
   		this.storage.set('appUnlocked', true);
+      this.navCtrl.setRoot(HomePage);
       this.navCtrl.popToRoot();
   	}
   	else {

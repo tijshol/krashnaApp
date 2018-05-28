@@ -26,7 +26,8 @@ export class MyApp {
       splashScreen.hide();
       storage.get('appUnlocked').then((isUnlocked) => {
         if (!isUnlocked)
-          this.nav.push(LoginPage);
+          this.nav.setRoot(LoginPage);
+          this.nav.popToRoot();
       });
     });
   }
