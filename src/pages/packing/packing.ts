@@ -12,11 +12,12 @@ import { packingList } from './packingList';
 })
 export class PackingPage {
 
-  constructor(public navCtrl: NavController, storage: Storage) {
+  constructor(public navCtrl: NavController, public storage: Storage) {
   	this.packingList = packingList;
   	this.checklist = [];
   	storage.get('checklist').then(list => {
-  		this.checklist = list;
+      if (list)
+  		  this.checklist = list;
   	});
   }
 
@@ -24,13 +25,12 @@ export class PackingPage {
     this.navCtrl.popToRoot();
   }
 
-  isChecked(id) {
-  	return this.checklist.includes(id);
+  isChecked(i) {
+  	return this.checklist[i];
   }
 
-  check(id) {
-  	if (!this.isChecked(id))
-  	  this.checklist.push(id);
+  saveChecklist() {
+    this.storage.set('checklist', this.checklist);
   }
 
 }
