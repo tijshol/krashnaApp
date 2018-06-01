@@ -29,7 +29,7 @@
     <p>{{ info.general }}</p>
   </ion-card-content>
 </ion-card>
-<ion-card *ngIf="info.teddyTips.length > 0">
+<ion-card *ngIf="info.teddyTips && info.teddyTips.length > 0">
   <ion-card-header><ion-icon float-right name="paw"></ion-icon> Teddy's Tips</ion-card-header>
   <ion-card-content>
     <ion-list>
@@ -40,7 +40,7 @@
     </ion-list>
   </ion-card-content>
 </ion-card>
-<ion-card *ngIf="info.hostel !== 'NONE'">
+<ion-card *ngIf="info.hostel">
   <ion-card-header><ion-icon float-right name="fn-hostel"></ion-icon> Hostel</ion-card-header>
   <ion-card-content>
     <ion-list>

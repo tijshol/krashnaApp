@@ -26,7 +26,6 @@ export const info = {
 	brno: {
 		name: 'Brno',
 		general: 'General information about Brno.',
-		hostel: 'NONE',
 		teddyTips: [
 			{
 				title: 'Tip 1',
