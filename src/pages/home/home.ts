@@ -46,13 +46,13 @@ export class HomePage {
     for (let i = 0; i < this.eventList.length-1; i++) {
       this.eventList[i].hide = this.eventList[i].past && this.eventList[i+1].past; // Leave the last
     }
-    this.eventList[this.eventList.length-1].hide = false;
+    this.eventList[this.eventList.length-1].hide = false; // There should always be 1 (past) event
 
     this.notificationService = new NotificationService(this.http);
 
     // Fetch notifications (works only on device)
     this.isLoading = true;
-    this.fetchNotifications();
+    this.fetchNotifications().then(() => { this.isLoading = false; });
   }
 
   fetchNotifications() {
@@ -68,7 +68,6 @@ export class HomePage {
             }
             this.notificationList.push(n);
           }
-          this.isLoading = false;
         })
         .catch(e => {
           if (typeof(e) === 'object' && e.error !== undefined)
@@ -77,7 +76,6 @@ export class HomePage {
             this.errMessage = e;
           else
             this.errMessage = 'unknown error';
-          this.isLoading = false;
       });
   }
 
