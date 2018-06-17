@@ -52,7 +52,7 @@
     <div *ngFor="let item of eventList.slice(transition, dateTransitions[t+1])">
       <div *ngIf = "!item.hide">
       <ion-list-header no-lines>
-        <button ion-item (click)="openEvent(item.id)" [ngClass]="{
+        <button ion-item detail-none (click)="openEvent(item.id)" [ngClass]="{
         'event-highlight': item.highlight,
         'event-open': item.open,
         'event-past': item.past
@@ -64,18 +64,18 @@
         </button>
 
         <ion-item *ngIf="item.open">
-          <ion-list>
-            <ion-item no-padding style="font-weight: 500;">
-              <p float-left>{{ item.timestamp | date:"EE dd-MM" }} | {{ item.time }} <span *ngIf="item.timeEnd"> - {{ item.timeEnd }}</span></p>
-              <p float-right *ngIf="item.group">{{ item.group }}</p>
-            </ion-item>
-            <ion-item no-padding style="font-weight: 500;" text-wrap>
-              <p>{{ item.location }}</p>
-            </ion-item>
-            <ion-item no-padding text-wrap *ngIf="item.description">
-              <p>{{ item.description }}</p>
-            </ion-item>
-          </ion-list>
+          <ion-grid>
+            <ion-row no-padding style="font-weight: 500;">
+              <ion-col>{{ item.timestamp | date:"EE dd-MM" }} | {{ item.time }} <span *ngIf="item.timeEnd"> - {{ item.timeEnd }}</span></ion-col>
+              <ion-col *ngIf="item.group">{{ item.group }}</ion-col>
+            </ion-row>
+            <ion-row no-padding style="font-weight: 500;" text-wrap>
+              <ion-col>{{ item.location }}</ion-col>
+            </ion-row>
+            <ion-row no-padding *ngIf="item.description">
+              <ion-col><p text-wrap>{{ item.description }}</p></ion-col>
+            </ion-row>
+          </ion-grid>
           
         </ion-item>
       </ion-list-header>
