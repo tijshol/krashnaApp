@@ -59,8 +59,12 @@
       }">
           <ion-icon item-left name="arrow-forward" *ngIf="!item.open"></ion-icon>
           <ion-icon item-left name="arrow-down" *ngIf="item.open"></ion-icon>
-            <div float-left style="display: inline-block;">{{ item.time }}</div>
-            <div float-right style="display: inline-block;">{{ item.name }}</div>
+          <ion-grid>
+            <ion-row>
+              <ion-col col-4 col-sm-3 float-left style="display: inline-block;">{{ item.time }}</ion-col>
+              <ion-col col-8 col-sm-9 float-right style="display: inline-block;">{{ item.name }}</ion-col>
+            </ion-row>
+          </ion-grid>
         </button>
 
         <ion-item *ngIf="item.open">
