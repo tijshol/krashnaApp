@@ -43,12 +43,16 @@
     </div>
   </ion-list>
   <div padding><h2>Schedule</h2></div>
-  <ion-list>
-    <div *ngFor="let item of eventList; let i = index">
+    <div *ngFor="let transition of dateTransitions.slice(0,-1); let t = index">
+      <div *ngIf="!eventList[dateTransitions[t+1] - 1].hide">
+      <ion-card>
+        <ion-card-header>{{ eventList[transition].timestamp | date:"EE dd-MM" }}</ion-card-header>
+        <ion-card-content>
+          <ion-list>
+    <div *ngFor="let item of eventList.slice(transition, dateTransitions[t+1])">
       <div *ngIf = "!item.hide">
-      <ion-item *ngIf="isDateTransition(i)" class="muted-small">{{ item.timestamp | date:"MMMM d" }}</ion-item>
       <ion-list-header no-lines>
-        <button ion-item (click)="openEvent(i)" [ngClass]="{
+        <button ion-item (click)="openEvent(item.id)" [ngClass]="{
         'event-highlight': item.highlight,
         'event-open': item.open,
         'event-past': item.past
@@ -77,5 +81,9 @@
       </ion-list-header>
       </div>
     </div>
-  </ion-list>
+    </ion-list>
+      </ion-card-content>
+    </ion-card>
+    </div>
+    </div>
 </ion-content>

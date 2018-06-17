@@ -40,6 +40,8 @@ export class HomePage {
       previousItem = item;
     }
 
+    this.dateTransitions.push(this.eventList.length);
+
     // Hide past events
     for (let i = 0; i < this.eventList.length-1; i++) {
       this.eventList[i].hide = this.eventList[i].past && this.eventList[i+1].past; // Leave the last
