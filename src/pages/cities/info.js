@@ -10,16 +10,16 @@ export const info = {
 		},
 		teddyTips: [
 			{
-				title: 'Tip 1',
-				text: 'This is a tip from Teddy!',
+				title: 'Conquer Bratislava',
+				text: 'Visit Bratislavský hrad, the big castle',
 			},
 			{
-				title: 'Tip 2',
-				text: 'Another useful tip!',
+				title: 'Spin while standing still',
+				text: 'Drink a cocktail in the ‘Spin bar’ (Radničná 577/1)',
 			},
 			{
-				title: 'Tip 3',
-				text: 'Please do follow these.',
+				title: 'Meet the locals',
+				text: 'Drink a local beer, they are quite good!',
 			},
 		],
 	},
@@ -28,16 +28,16 @@ export const info = {
 		general: 'General information about Brno.',
 		teddyTips: [
 			{
-				title: 'Tip 1',
-				text: 'This is a tip from Teddy!',
+				title: 'Ooh and aah',
+				text: 'Take a walk through the old town and look up, its worth your while',
 			},
 			{
-				title: 'Tip 2',
-				text: 'Another useful tip!',
+				title: 'Find religion',
+				text: 'Visit the Cathedral of St. Peter and St. Paul',
 			},
 			{
-				title: 'Tip 3',
-				text: 'Please do follow these.',
+				title: 'Get high',
+				text: 'Climb to the top of the old town hall (stadhuis) and admire the city view from up top.',
 			},
 		],
 	},
@@ -52,16 +52,16 @@ export const info = {
 		},
 		teddyTips: [
 			{
-				title: 'Tip 1',
-				text: 'This is a tip from Teddy!',
+				title: 'Abide to clichés',
+				text: 'Eat a ‘Sachertorte’! You’re in Vienna, might as well.',
 			},
 			{
-				title: 'Tip 2',
-				text: 'Another useful tip!',
+				title: 'Dip in the Donau',
+				text: 'Take a swim in the Donau at ‘Bundesbad Alte Donau’ (Metro U1 ‘Alte Donau’)',
 			},
 			{
-				title: 'Tip 3',
-				text: 'Please do follow these.',
+				title: 'Explore',
+				text: 'Enjoy the city, it has a lot to offer',
 			},
 		],
 	},
