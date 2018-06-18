@@ -35,3 +35,4 @@ Thumbs.db
 UserInterfaceState.xcuserstate
 
 src/services/keys/
+src/assets/json/contacts.js

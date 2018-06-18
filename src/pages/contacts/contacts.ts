@@ -3,6 +3,8 @@ import { NavController } from 'ionic-angular';
 
 import { HomePage } from '../home/home';
 
+import { contacts } from '../../assets/json/contacts.js';
+
 @Component({
   selector: 'page-contacts',
   templateUrl: 'contacts.html'
@@ -10,6 +12,7 @@ import { HomePage } from '../home/home';
 export class ContactsPage {
 
   constructor(public navCtrl: NavController) {
+  	this.contacts = contacts;
   }
 
   goHome() {

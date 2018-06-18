@@ -17,5 +17,28 @@
 </ion-header>
 
 <ion-content>
-  Contacts page
+  <ion-list>
+    <ion-list-header>
+      <h1>Emergencies</h1>
+    </ion-list-header>
+    <ion-item *ngFor="let contact of contacts.emergency">
+      <h2 text-wrap>{{ contact.name }}</h2>
+      <ion-icon name="call"></ion-icon> {{ contact.number }}
+      <p *ngIf="contact.description" text-wrap>{{ contact.description }}</p>
+    </ion-item>
+    <ion-list-header>
+      <h1>Tourcie</h1>
+    </ion-list-header>
+    <ion-item *ngFor="let contact of contacts.tourcie">
+      <h2 text-wrap>{{ contact.name }}</h2>
+      <ion-icon name="call"></ion-icon> {{ contact.number }}
+    </ion-item>
+    <ion-list-header>
+      <h1>Members</h1>
+    </ion-list-header>
+    <ion-item *ngFor="let contact of contacts.members">
+      <h3 float-left>{{ contact.initials }} {{ contact.name }}</h3>
+      <p float-right>{{ contact.instrument }}<span *ngIf="contact.second.length > 0">, {{ contact.second }}</span></p>
+    </ion-item>
+  </ion-list>
 </ion-content>
