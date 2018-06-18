@@ -8,6 +8,7 @@ import { ChallengesPage } from '../pages/challenges/challenges';
 import { ContactsPage } from '../pages/contacts/contacts';
 import { CitiesPage } from '../pages/cities/cities';
 import { PackingPage } from '../pages/packing/packing';
+import { TeamsPage } from '../pages/teams/teams';
 import { LoginPage } from '../pages/login/login';
 
 import { StatusBar } from '@ionic-native/status-bar';
@@ -25,6 +26,7 @@ import { IonicStorageModule } from '@ionic/storage';
     ContactsPage,
     CitiesPage,
     PackingPage,
+    TeamsPage,
     LoginPage
   ],
   imports: [
@@ -40,6 +42,7 @@ import { IonicStorageModule } from '@ionic/storage';
     ContactsPage,
     CitiesPage,
     PackingPage,
+    TeamsPage,
     LoginPage
   ],
   providers: [

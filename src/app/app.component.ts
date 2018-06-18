@@ -9,6 +9,7 @@ import { ChallengesPage } from '../pages/challenges/challenges';
 import { CitiesPage } from '../pages/cities/cities';
 import { ContactsPage } from '../pages/contacts/contacts';
 import { PackingPage } from '../pages/packing/packing';
+import { TeamsPage } from '../pages/teams/teams';
 import { LoginPage } from '../pages/login/login';
 
 @Component({
@@ -45,6 +46,9 @@ export class MyApp {
       break;
       case 'packing':
         this.nav.push(PackingPage);
+      break;
+      case 'teams':
+        this.nav.push(TeamsPage);
       break;
       case 'bratislava':
         this.nav.push(CitiesPage, {city: 'bratislava'});
