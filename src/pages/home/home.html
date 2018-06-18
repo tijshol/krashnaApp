@@ -62,15 +62,18 @@
           <ion-grid no-padding>
             <ion-row no-padding>
               <ion-col col-4 col-sm-3 text-left style="display: inline-block;">{{ item.time }}</ion-col>
-              <ion-col col-8 col-sm-9 text-right style="display: inline-block;">{{ item.name }}</ion-col>
+              <ion-col col-8 col-sm-9 text-right style="display: inline-block;" class="wrap-text">{{ item.name }}</ion-col>
             </ion-row>
           </ion-grid>
         </button>
 
         <ion-item *ngIf="item.open">
           <ion-grid>
+            <ion-row>
+              <ion-col text-wrap style="font-weight: 900;">{{ item.name }}</ion-col>
+            </ion-row>
             <ion-row no-padding style="font-weight: 500;">
-              <ion-col text-left><ion-icon name="time"></ion-icon> {{ item.timestamp | date:"EE dd-MM" }} | {{ item.time }} <span *ngIf="item.timeEnd"> - {{ item.timeEnd }}</span></ion-col>
+              <ion-col text-left><ion-icon name="time"></ion-icon> {{ item.time }} <span *ngIf="item.timeEnd"> - {{ item.timeEnd }}</span></ion-col>
               <ion-col text-right *ngIf="item.group"><ion-icon name="people"></ion-icon> {{ item.group }}</ion-col>
             </ion-row>
             <ion-row no-padding *ngIf="item.location" style="font-weight: 500;" text-wrap>

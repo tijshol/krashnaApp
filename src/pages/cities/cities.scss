@@ -11,4 +11,7 @@ page-cities {
 		font-size: $font-size-small;
 		color: color($colors, 'light');
 	}
+	p {
+		white-space: pre-wrap;
+	}
 }
