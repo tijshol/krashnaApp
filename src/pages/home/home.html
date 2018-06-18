@@ -66,6 +66,7 @@
             </ion-row>
           </ion-grid>
         </button>
+      </ion-list-header>
 
         <ion-item *ngIf="item.open">
           <ion-grid>
@@ -77,7 +78,7 @@
               <ion-col text-right *ngIf="item.group"><ion-icon name="people"></ion-icon> {{ item.group }}</ion-col>
             </ion-row>
             <ion-row no-padding *ngIf="item.location" style="font-weight: 500;" text-wrap>
-              <ion-col><ion-icon name="map"></ion-icon> <a (click)="mapsLocation(item.location)">{{ item.location }}</a></ion-col>
+              <ion-col><ion-icon name="map"></ion-icon> {{ item.location }}</ion-col>
             </ion-row>
             <ion-row no-padding *ngIf="item.description">
               <ion-col><p text-wrap>{{ item.description }}</p></ion-col>
@@ -85,7 +86,6 @@
           </ion-grid>
           
         </ion-item>
-      </ion-list-header>
       </div>
     </div>
     </ion-list>

@@ -47,8 +47,8 @@
       <ion-item>
         <h2>{{ info.hostel.name }}</h2>
       </ion-item>
-      <ion-item>
-        <ion-icon name="map"></ion-icon> <a (click)="mapsLocation(info.hostel.location)">{{ info.hostel.location }}</a>
+      <ion-item text-wrap>
+        <ion-icon name="map"></ion-icon> {{ info.hostel.location }}
       </ion-item>
       <ion-item>
         <ion-icon name="call"></ion-icon> {{ info.hostel.tel }}
@@ -66,11 +66,11 @@
       <ion-item>
         <p class="muted-small">{{ info.borrel.description }}</p>
       </ion-item>
-      <ion-item>
-        <ion-icon name="map"></ion-icon> <a (click)="mapsLocation(info.borrel.location)">{{ info.borrel.location }}</a>
+      <ion-item text-wrap>
+        <ion-icon name="map"></ion-icon> {{ info.borrel.location }}
       </ion-item>
       <ion-item>
-        <ion-icon name="compass"></ion-icon> <a (click)="mapsLocationRoute(info.borrel.location, info.hostel.location)">Route to bed</a>
+        <ion-icon name="compass"></ion-icon> <a (click)="mapsLocation(info.hostel.location)">Route to bed</a>
       </ion-item>
       <ion-item>
         <h2><ion-icon name="train"></ion-icon> Transit tips</h2>
