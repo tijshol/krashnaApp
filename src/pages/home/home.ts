@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { events } from '../../assets/json/events.js';
 import { NotificationService } from '../../services/notifications';
 import { HTTP } from '@ionic-native/http';
+import { LaunchNavigator } from '@ionic-native/launch-navigator';
 
 @Component({
   selector: 'page-home',
@@ -15,7 +16,7 @@ export class HomePage {
   isLoading: boolean;
   showAllNotifications: boolean;
 
-  constructor(public http: HTTP) {
+  constructor(public http: HTTP, public launchNavigator: LaunchNavigator) {
     // Fetch event list (local)
     this.eventList = events;
     this.dateTransitions = [];
@@ -99,6 +100,10 @@ export class HomePage {
     this.fetchNotifications().then(() => {
       refresher.complete();
     });
+  }
+
+  mapsLocation(location) {
+    this.launchNavigator.navigate(location, {});
   }
 
   }

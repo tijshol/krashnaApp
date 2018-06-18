@@ -45,7 +45,7 @@
   <div padding><h2>Schedule</h2></div>
     <div *ngFor="let transition of dateTransitions.slice(0,-1); let t = index">
       <div *ngIf="!eventList[dateTransitions[t+1] - 1].hide">
-      <ion-card>
+      <ion-card no-padding>
         <ion-card-header>{{ eventList[transition].timestamp | date:"EE dd-MM" }}</ion-card-header>
         <ion-card-content>
           <ion-list>
@@ -59,10 +59,10 @@
       }">
           <ion-icon item-left name="arrow-forward" *ngIf="!item.open"></ion-icon>
           <ion-icon item-left name="arrow-down" *ngIf="item.open"></ion-icon>
-          <ion-grid>
-            <ion-row>
-              <ion-col col-4 col-sm-3 float-left style="display: inline-block;">{{ item.time }}</ion-col>
-              <ion-col col-8 col-sm-9 float-right style="display: inline-block;">{{ item.name }}</ion-col>
+          <ion-grid no-padding>
+            <ion-row no-padding>
+              <ion-col col-4 col-sm-3 text-left style="display: inline-block;">{{ item.time }}</ion-col>
+              <ion-col col-8 col-sm-9 text-right style="display: inline-block;">{{ item.name }}</ion-col>
             </ion-row>
           </ion-grid>
         </button>
@@ -70,11 +70,11 @@
         <ion-item *ngIf="item.open">
           <ion-grid>
             <ion-row no-padding style="font-weight: 500;">
-              <ion-col>{{ item.timestamp | date:"EE dd-MM" }} | {{ item.time }} <span *ngIf="item.timeEnd"> - {{ item.timeEnd }}</span></ion-col>
-              <ion-col *ngIf="item.group">{{ item.group }}</ion-col>
+              <ion-col text-left><ion-icon name="time"></ion-icon> {{ item.timestamp | date:"EE dd-MM" }} | {{ item.time }} <span *ngIf="item.timeEnd"> - {{ item.timeEnd }}</span></ion-col>
+              <ion-col text-right *ngIf="item.group"><ion-icon name="people"></ion-icon> {{ item.group }}</ion-col>
             </ion-row>
-            <ion-row no-padding style="font-weight: 500;" text-wrap>
-              <ion-col>{{ item.location }}</ion-col>
+            <ion-row no-padding *ngIf="item.location" style="font-weight: 500;" text-wrap>
+              <ion-col><ion-icon name="map"></ion-icon> <a (click)="mapsLocation(item.location)">{{ item.location }}</a></ion-col>
             </ion-row>
             <ion-row no-padding *ngIf="item.description">
               <ion-col><p text-wrap>{{ item.description }}</p></ion-col>
