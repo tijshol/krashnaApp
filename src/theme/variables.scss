@@ -28,10 +28,6 @@ $tabs-border-color: #ccc;
 $tabs-tab-color-inactive: #ddd;
 $tabs-md-tab-color-inactive: #ddd;
 $tabs-tab-color-active: #fff;
-$font-family-base: "Raleway", sans-serif;
-$font-family-ios-base: $font-family-base;
-$font-family-md-base: $font-family-base;
-$font-family-wp-base: $font-family-base;
 
 
 // Named Color Variables
@@ -95,5 +91,4 @@ $colors: (
 
 @import "roboto";
 @import "noto-sans";
-@import "../assets/fonts/raleway";
 @import "../assets/fonts/faunicons";
