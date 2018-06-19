@@ -26,11 +26,10 @@
   </ion-card>
   <ion-list *ngIf="notificationList.length > 0">
     <div *ngFor="let note of notificationList; let i = index">
-    <ion-item no-lines text-wrap *ngIf="i < 3 || showAllNotifications" (click)="openNotification(i)">
+    <ion-item text-wrap *ngIf="i < 3 || showAllNotifications" (click)="openNotification(i)">
       <ion-icon item-left name="alert"></ion-icon>
-      <h3 float-left>{{ note.text }}</h3>
-      <p class="muted-small" float-right>{{ note.timestamp }}</p>
-      <p class="muted-small" float-left [ngClass]="{'wrap-text': !note.open}">{{ note.longText }}</p>
+      <h3 text-wrap>{{ note.text }}</h3>
+      <p class="muted-small" *ngIf="note.longText" [ngClass]="{'wrap-text': !note.open}">{{ note.longText }}</p>
     </ion-item>
     </div>
     <div *ngIf="notificationList.length > 3">
