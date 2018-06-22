@@ -29,6 +29,14 @@ export const info = {
 Teddy thinks the public transport at night in Bratislava is terrible and not worth your while. Use your legs, its honestly not that far to our hostel (19 min sober / 25min drunk / 35min very drunk).`,
 			description: 'The borrel on Monday the 9th, after the Radiobuilding concert.',
 		},
+		concerts: [
+			{
+				name: "Radio Building Concert",
+				date: "2018/07/09",
+				time: "20:00",
+				location: "Slovak Radio Building",
+			},
+		],
 	},
 	brno: {
 		name: 'Brno',
@@ -46,6 +54,14 @@ Teddy thinks the public transport at night in Bratislava is terrible and not wor
 				title: 'Get high',
 				text: 'Climb to the top of the old town hall (stadhuis) and admire the city view from up top.',
 			},
+		],
+		concerts: [
+			{
+				name: "Brno Concert",
+				date: "2018/07/11",
+				time: "15:00",
+				location: "Square next to Church of St. Thomas",
+			}
 		],
 	},
 	vienna: {
@@ -84,5 +100,19 @@ Nightline tips:
 - Walk home frome Reumannplatz`,
 			description: 'Party on Thursday the 12th, after the Kuppelsaal concert.',
 		},
+		concerts: [
+			{
+				name: "Schottenkirche Concert",
+				date: "2018/07/10",
+				time: "20:00",
+				location: "Schottenkirche",
+			},
+			{
+				name: "Kuppelsaal Concert",
+				date: "2018/07/12",
+				time: "20:00",
+				location: "Kuppelsaal, TU Wien",
+			},
+		],
 	},
 };

@@ -33,7 +33,7 @@
   <ion-card-header><ion-icon float-right name="paw"></ion-icon> Teddy's Tips</ion-card-header>
   <ion-card-content>
     <ion-list>
-      <ion-item *ngFor="let tip of info.teddyTips; let i = index">
+      <ion-item *ngFor="let tip of info.teddyTips">
         <h2>{{ tip.title }}</h2>
         <p>{{ tip.text }}</p>
       </ion-item>
@@ -58,6 +58,17 @@
       </ion-item>
     </ion-list>
   </ion-card-content>
+</ion-card>
+<ion-card *ngIf="info.concerts && info.concerts.length > 0">
+<ion-card-header><ion-icon float-right name="musical-notes"></ion-icon> Concerts</ion-card-header>
+<ion-card-content>
+  <ion-list>
+    <ion-item *ngFor="let concert of info.concerts">
+      <h2>{{ concert.name }}</h2>
+      <ion-icon name="time"></ion-icon> {{ concert.timestamp | date: "EE dd-MM, HH:mm" }}
+    </ion-item>
+  </ion-list>
+</ion-card-content>
 </ion-card>
 <ion-card *ngIf="info.borrel">
   <ion-card-header><ion-icon float-right name="beer"></ion-icon>{{ info.borrel.title }}</ion-card-header>

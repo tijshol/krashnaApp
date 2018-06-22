@@ -15,6 +15,12 @@ export class CitiesPage {
   constructor(public navCtrl: NavController, public navParams: NavParams, public launchNavigator: LaunchNavigator) {
   	this.city = this.navParams.get('city');
   	this.info = info[this.city];
+    let timestamp;
+    if (this.info.concerts)
+      for (let concert of this.info.concerts) {
+        timestamp = new Date(concert.date + ' ' + concert.time);
+        concert.timestamp = timestamp;
+      }
   }
 
   goHome() {
