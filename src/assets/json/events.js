@@ -156,20 +156,20 @@ export const events = [{
   time: "21:00",
   location: "Donau Park, Vienna",
 }, {
-  id: 23,
+  id: 24,
   name: "Arrival in Delft",
   date: "2018/07/14",
   time: "12:00",
   location: "Unit Cultuur",
   description: "Arrival time can vary.",
 }, {
-  id: 24,
+  id: 25,
   name: "Rehearsal Amsterdam",
   date: "2018/07/15",
   time: "12:00",
   location: "Muziekgebouw aan 't IJ, Amsterdam",
 }, {
-  id: 25,
+  id: 26,
   name: "Amsterdam Concert",
   date: "2018/07/15",
   time: "14:00",

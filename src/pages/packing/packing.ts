@@ -11,6 +11,8 @@ import { packingList } from './packingList';
   templateUrl: 'packing.html'
 })
 export class PackingPage {
+  packingList: any[];
+  checklist: any[];
 
   constructor(public navCtrl: NavController, public storage: Storage) {
   	this.packingList = packingList;

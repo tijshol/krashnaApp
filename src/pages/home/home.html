@@ -33,59 +33,59 @@
     </ion-item>
     </div>
     <div *ngIf="notificationList.length > 3">
-      <button ion-button full outline (click)="showAllNotifications = !showAllNotifications" *ngIf="!showAllNotifications">
-        Show {{ notificationList.length - 3 }} more
-      </button>
-      <button ion-button full outline (click)="showAllNotifications = !showAllNotifications" *ngIf="showAllNotifications">
-        Hide
-      </button>
+      <button ion-button full outline *ngIf="!showAllNotifications" (click)="showAllNotifications = true">Show {{ notificationList.length - 3 }} more</button>
+      <button ion-button full outline *ngIf="showAllNotifications" (click)="showAllNotifications = false">Hide</button>
     </div>
   </ion-list>
   <div padding><h2>Schedule</h2></div>
-    <div *ngFor="let transition of dateTransitions.slice(0,-1); let t = index">
-      <div *ngIf="!eventList[dateTransitions[t+1] - 1].hide">
+    <ion-card *ngIf="showAllScheduleButton">
+      <ion-card-content>
+        <button ion-button block outline class="event-toggle-shown" *ngIf="!showAllSchedule" (click)="showAllSchedule = true">Show past days</button>
+        <button ion-button block outline class="event-toggle-shown" *ngIf="showAllSchedule" (click)="showAllSchedule = false">Hide past days</button>
+      </ion-card-content>
+    </ion-card>
+    <div *ngFor="let day of schedule">
+      <div *ngIf="showAllSchedule || !day.hide">
       <ion-card no-padding>
-        <ion-card-header>{{ eventList[transition].timestamp | date:"EE dd-MM" }}</ion-card-header>
+        <ion-card-header [ngClass]="{'event-past': day.hide}">{{ day.timestamp | date:"EE dd-MM" }}</ion-card-header>
         <ion-card-content>
           <ion-list>
-    <div *ngFor="let item of eventList.slice(transition, dateTransitions[t+1])">
-      <div *ngIf = "!item.hide">
+    <div *ngFor="let event of day.events">
       <ion-list-header no-lines>
-        <button ion-item detail-none (click)="openEvent(item.id)" [ngClass]="{
-        'event-highlight': item.highlight,
-        'event-open': item.open,
-        'event-past': item.past
+        <button ion-item detail-none (click)="openEvent(event.id)" [ngClass]="{
+        'event-highlight': event.highlight,
+        'event-open': event.open,
+        'event-past': event.past
       }">
-          <ion-icon item-left name="arrow-forward" *ngIf="!item.open"></ion-icon>
-          <ion-icon item-left name="arrow-down" *ngIf="item.open"></ion-icon>
+          <ion-icon item-left name="arrow-forward" *ngIf="!event.open"></ion-icon>
+          <ion-icon item-left name="arrow-down" *ngIf="event.open"></ion-icon>
           <ion-grid no-padding>
             <ion-row no-padding>
-              <ion-col col-4 col-sm-3 text-left style="display: inline-block;">{{ item.time }}</ion-col>
-              <ion-col col-8 col-sm-9 text-right style="display: inline-block;" class="wrap-text">{{ item.name }}</ion-col>
+              <ion-col col-4 col-sm-3 text-left style="display: inline-block;">{{ event.timestamp | date:"HH:mm" }}</ion-col>
+              <ion-col col-8 col-sm-9 text-right style="display: inline-block;" class="wrap-text">{{ event.name }}</ion-col>
             </ion-row>
           </ion-grid>
         </button>
       </ion-list-header>
 
-        <ion-item *ngIf="item.open">
-          <ion-grid>
-            <ion-row>
-              <ion-col text-wrap style="font-weight: 900;">{{ item.name }}</ion-col>
-            </ion-row>
-            <ion-row no-padding style="font-weight: 500;">
-              <ion-col text-left><ion-icon name="time"></ion-icon> {{ item.time }} <span *ngIf="item.timeEnd"> - {{ item.timeEnd }}</span></ion-col>
-              <ion-col text-right *ngIf="item.group"><ion-icon name="people"></ion-icon> {{ item.group }}</ion-col>
-            </ion-row>
-            <ion-row no-padding *ngIf="item.location" style="font-weight: 500;" text-wrap>
-              <ion-col><ion-icon name="map"></ion-icon> {{ item.location }}</ion-col>
-            </ion-row>
-            <ion-row no-padding *ngIf="item.description">
-              <ion-col><p text-wrap>{{ item.description }}</p></ion-col>
-            </ion-row>
-          </ion-grid>
-          
-        </ion-item>
-      </div>
+      <ion-item *ngIf="event.open">
+        <ion-grid>
+          <ion-row>
+            <ion-col text-wrap style="font-weight: 900;">{{ event.name }}</ion-col>
+          </ion-row>
+          <ion-row no-padding style="font-weight: 500;">
+            <ion-col text-left><ion-icon name="time"></ion-icon> {{ event.time }} <span *ngIf="event.timeEnd"> - {{ event.timeEnd }}</span></ion-col>
+            <ion-col text-right *ngIf="event.group"><ion-icon name="people"></ion-icon> {{ event.group }}</ion-col>
+          </ion-row>
+          <ion-row no-padding *ngIf="event.location" style="font-weight: 500;" text-wrap>
+            <ion-col><ion-icon name="map"></ion-icon> {{ event.location }}</ion-col>
+          </ion-row>
+          <ion-row no-padding *ngIf="event.description">
+            <ion-col><p text-wrap>{{ event.description }}</p></ion-col>
+          </ion-row>
+        </ion-grid>
+        
+      </ion-item>
     </div>
     </ion-list>
       </ion-card-content>

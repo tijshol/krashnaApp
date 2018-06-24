@@ -11,6 +11,8 @@ import { info } from './info.js';
   templateUrl: 'cities.html'
 })
 export class CitiesPage {
+  city: string;
+  info: any;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public launchNavigator: LaunchNavigator) {
   	this.city = this.navParams.get('city');

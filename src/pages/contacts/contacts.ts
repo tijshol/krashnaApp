@@ -10,6 +10,7 @@ import { contacts } from '../../assets/json/contacts.js';
   templateUrl: 'contacts.html'
 })
 export class ContactsPage {
+  contacts: object;
 
   constructor(public navCtrl: NavController) {
   	this.contacts = contacts;

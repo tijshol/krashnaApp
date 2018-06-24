@@ -12,9 +12,12 @@ page-home {
   .event-past {
   	color: color($colors, 'light');;
   }
+  .event-toggle-show {
+    color: color($colors, 'primary');
+  }
   .muted-small {
-  	font-size: $font-size-small;
-	color: color($colors, 'light');
+    font-size: $font-size-small;
+    color: color($colors, 'light');
   }
   .wrap-text {
     text-overflow: ellipsis;

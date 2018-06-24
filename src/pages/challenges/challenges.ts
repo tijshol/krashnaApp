@@ -10,6 +10,7 @@ import { challenges } from '../../assets/json/challenges.js';
   templateUrl: 'challenges.html'
 })
 export class ChallengesPage {
+  challenges: any[];
 
   constructor(public navCtrl: NavController) {
   	this.challenges = challenges;
