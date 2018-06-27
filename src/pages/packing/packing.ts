@@ -2,8 +2,6 @@ import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { Storage } from '@ionic/storage';
 
-import { HomePage } from '../home/home';
-
 import { packingList } from './packingList';
 
 @Component({
