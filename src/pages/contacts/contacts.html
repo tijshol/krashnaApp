@@ -36,6 +36,15 @@
     <ion-list-header>
       <h1>Members</h1>
     </ion-list-header>
+    <ion-item>
+      <ion-label>Sort on:</ion-label>
+      <ion-select [(ngModel)]="sort" (ionChange)="sortMembers()">
+        <ion-option value="name">Last name</ion-option>
+        <ion-option value="initials">Initials</ion-option>
+        <ion-option value="instrument">Instrument</ion-option>
+        <ion-option value="second">Second instrument</ion-option>
+      </ion-select>
+    </ion-item>
     <ion-item *ngFor="let contact of contacts.members">
       <h3 float-left>{{ contact.initials }} {{ contact.name }}</h3>
       <p float-right>{{ contact.instrument }}<span *ngIf="contact.second.length > 0">, {{ contact.second }}</span></p>
