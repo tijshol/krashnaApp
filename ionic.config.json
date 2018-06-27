@@ -1,6 +1,6 @@
 {
   "name": "Lustrum Tour",
-  "app_id": "",
+  "app_id": "nl.krashna.lustrum-tour",
   "type": "ionic-angular",
   "integrations": {
     "cordova": {}
