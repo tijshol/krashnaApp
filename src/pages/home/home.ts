@@ -31,7 +31,7 @@ export class HomePage {
 
     console.log(now, today);
 
-    let dates: string[];
+    let dates: string[] = [];
     let previousPast = true;
 
     for (let event of events) {
