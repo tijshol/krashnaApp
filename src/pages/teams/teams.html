@@ -81,7 +81,7 @@
     </ion-card-content>
   </ion-card>
   <ion-card>
-    <ion-card-header>DirectCie <ion-icon float-right name="musical-notes"></ion-icon></ion-card-header>
+    <ion-card-header>DirectCie <ion-icon float-right name="musical-notes" [ngClass]="{'highlight': isTapping}" (click)="tapMusic()"></ion-icon></ion-card-header>
     <ion-card-content>
       <p>You are the best buddies of Daan and Ruben during this tour! Make sure they have an awesome time and make sure they don’t forget their concert clothes and passports.</p>
       <p float-right>QQ: Tanja</p>
