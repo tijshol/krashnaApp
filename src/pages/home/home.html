@@ -62,8 +62,8 @@
           <ion-icon item-left name="arrow-down" *ngIf="event.open"></ion-icon>
           <ion-grid no-padding>
             <ion-row no-padding>
-              <ion-col col-4 col-sm-3 text-left style="display: inline-block;">{{ event.timestamp | date:"HH:mm" }}</ion-col>
-              <ion-col col-8 col-sm-9 text-right style="display: inline-block;" class="wrap-text">{{ event.name }}</ion-col>
+              <ion-col col-4 col-sm-3 style="display: inline-block;">{{ event.timestamp | date:"HH:mm" }}</ion-col>
+              <ion-col col-8 col-sm-9 style="display: inline-block;" class="wrap-text">{{ event.name }}</ion-col>
             </ion-row>
           </ion-grid>
         </button>

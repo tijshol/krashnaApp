@@ -6,7 +6,7 @@ export const challenges = {
     }, {
         id: 1,
         name: "Partyslava",
-        description: "Join the big party in Bratislava"
+        description: "Join the Bukowski party in Bratislava"
     }, {
         id: 2,
         name: "Braktislava",
@@ -18,11 +18,11 @@ export const challenges = {
     }, {
         id: 4,
         name: "Brno job",
-        description: "Yes, could apply to men and women"
+        description: "Could apply to men and women, giving and receiving"
     }, {
         id: 5,
         name: "Wenen wijd",
-        description: "Yes, could apply to men and women"
+        description: "Full on, (Bonus: if you dont wake the people sleeping next to you)"
     }, {
         id: 6,
         name: "Brno voor de leden",
@@ -42,15 +42,15 @@ export const challenges = {
     }, {
         id: 10,
         name: "Musician without borders",
-        description: "Be a street musiscian (Bonus: advertise krashna concert)"
+        description: "Be a street musiscian (Bonus: advertise Krashna concert)"
     }, {
         id: 11,
         name: "Tourcie Tribute",
-        description: "Imitate a pretour picture"
+        description: "Replicate a Tourcie pretour picture"
     }, {
         id: 12,
         name: "Very steddy",
-        description: "Take Teddy on an adventure (doenst count if you lose teddy)"
+        description: "Take Teddy on an adventure (doenst count if you lose teddy), send a picture to the TedCie"
     }, {
         id: 13,
         name: "You blew it!",
@@ -58,7 +58,7 @@ export const challenges = {
     }, {
         id: 14,
         name: "Not so steddy",
-        description: "Be late, everywhere"
+        description: "Be late, anywhere"
     }, {
         id: 15,
         name: "Flagged",
@@ -77,30 +77,31 @@ export const challenges = {
         description: "Drink a beer with one of the conductors"
     }, {
         id: 19,
-        name: "BrYes",
-        description: "(verzin hier eens iets leuks bij)"
+        name: "Am schone blaue Donau",
+        description: "Swim in the Donau"
+
     }],
     bratislava: [{
         id: 20,
         name: "Head is spinning",
-        description: "Drink a cocktail a Spin bar"
+        description: "Drink a cocktail at Spin bar"
     }, {
         id: 21,
-        name: "Am schone blaue Donau",
-        description: "Swim in the Donau "
-    }, {
-        id: 22,
         name: "Nepomust",
         description: "Visit the J.N Hummel Museum"
     }],
     brno: [{
-        id: 23,
+        id: 22,
         name: "Castlefest",
         description: "Selfie at Spilberk Castle Brno"
+    }, {
+        id: 23,
+        name: "BrYes",
+        description: "Brno Borrel, be there!"
     }],
     vienna: [{
         id: 24,
-        name: "Krakra Krark?",
+        name: "Krakra Krank",
         description: "Drink a drink in the 'krakra' pub"
     }, {
         id: 25,
@@ -108,7 +109,7 @@ export const challenges = {
         description: "Visit Schloß Schönbrunn"
     }, {
         id: 26,
-        name: "Travelshack ",
+        name: "Travelshack",
         description: "Join the Travelshack party"
     }, {
         id: 27,
@@ -121,11 +122,11 @@ export const challenges = {
     }, {
         id: 29,
         name: "Just a mahler thing",
-        description: "Visit the Mahler statue next to the staatsoper"
+        description: "Visit the Mahler statue next to the Staatsoper"
     }, {
         id: 30,
         name: "Gouden Lustrum",
-        description: "Selfie in the Golden Hall, (bonus: with LuCie member)"
+        description: "Selfie in the Golden Hall at Musikverein, (bonus: with LuCie member)"
     }, {
         id: 31,
         name: "Auf Wiederschnitzel",
@@ -137,6 +138,6 @@ export const challenges = {
     }, {
         id: 33,
         name: "I saw that!",
-        description: "Find the Krashna adverticement in the printed eventprogramm of the Vienna Tourist Information"
+        description: "Find the Krashna advertisement in the printed eventprogramme of the Vienna Tourist Information"
     }]
 };

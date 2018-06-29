@@ -1,114 +1,98 @@
 export const packingList = [{
     id: 0,
-    name: "ID-card/ Passport",
-    description: "Have it with you at all time during the tour"
+    name: "ID / Paspoort",
+    description: "Altijd bij je houden tijdens tournee!"
 }, {
     id: 1,
-    name: "Bankcard",
+    name: "Bankpas",
 }, {
     id: 2,
     name: "Verzekeringsdocumenten",
     description: "Reis & instrument"
 }, {
     id: 3,
-    name: "Sheet music"
+    name: "Telefoon + oplader",
 }, {
     id: 4,
-    name: "Concert outfit",
-    description: "Heren: rokcostuum. Dames jurk tot over de knie met leuke, effen kleur"
+    name: "Zakgeld (cash)",
+    description: "Handig, niet vereist"
 }, {
     id: 5,
-    name: "Instrument",
+    name: "Instrument of koormap",
 }, {
     id: 6,
-    name: "Koormap",
-    description: "Zwarte map"
+    name: "Bladmuziek",
+    description: "Gewone concerten en KaMu"
 }, {
     id: 7,
-    name: "Lessenaar",
-    description: "toelichting"
+    name: "Mondstuk, snaren, rieten, keelsnoepjes, dempers, celloplankjes, hars, wasknijpers, etc.",
 }, {
     id: 8,
-    name: "Chamber sheet music",
-    description: "toelichting"
+    name: "Lessenaar",
 }, {
     id: 9,
-    name: "Wasknijpers, mondstuk, snaren, rieten, demppers, celloplankjes, hars",
-    description: "Anders ben je een pannekoek"
+    name: "Potlood en pen",
 }, {
     id: 10,
-    name: "Kleding",
-    description: "Sokken en zo"
+    name: "Concert outfit",
+    description: "Mannen: zwart pak met effen gekleurd overhemd (zwarte- of krashna strik). Vrouwen: zwarte jurk met effen kleuraccent of effen gekleurde jurk (schouders en knieën bedekt)"
 }, {
     id: 11,
     name: "Schoenen",
-    description: "toelichting"
 }, {
     id: 12,
-    name: "Party-outfits",
-    description: "toelichting"
+    name: "Kleding",
+    description: "Sokken en zo"  
 }, {
     id: 13,
-    name: "Medicijnen",
-    description: "toelichting"
+    name: "Sportkleding",
+    description: "Als je meer dan alleen bierspieren wilt trainen (niet vereist)"
 }, {
     id: 14,
-    name: "Tandenborstel + tandpasta",
-    description: "toelichting"
+    name: "Party-outfits",
+    description: "Als je WEL veel bierspieren wilt trainen (vereist)"
 }, {
     id: 15,
-    name: "Deodorant",
-    description: "toelichting"
+    name: "Zwemspullen",
 }, {
     id: 16,
     name: "Tioletspullen",
     description: "Shampoo en zo"
 }, {
     id: 17,
-    name: "Towel",
-    description: "Als je een pannekoek bent"
+    name: "Tandenborstel + tandpasta",
 }, {
     id: 18,
-    name: "Oordopjes",
-    description: "toelichting"
+    name: "Deodorant",
 }, {
     id: 19,
-    name: "Condoom(s)",
-    description: "Geen tour-baby's"
+    name: "Medicijnen",
 }, {
     id: 20,
     name: "Zonnebrandcrème",
-    description: "toelichting"
 }, {
     id: 21,
-    name: "Zwemspullen",
-    description: "toelichting"
+    name: "Condoom(s)",
+    description: "Geen tour-baby's!"
 }, {
     id: 22,
-    name: "Telefoon + oplader",
-    description: "toelichting"
+    name: "Oordopjes",
+    description: "anti-snurk"
 }, {
     id: 23,
-    name: "Eten voor in de bus",
-    description: "toelichting"
+    name: "Tournee Tools",
+    description: "Handdoek, zonnebril, waaier, etc."
 }, {
     id: 24,
-    name: "Potlood en pen",
-    description: "toelichting"
+    name: "Rugtas",
 }, {
     id: 25,
-    name: "Rugtas",
-    description: "toelichting"
+    name: "Spelletjes en boeken",
 }, {
     id: 26,
-    name: "Spelletjes en boeken",
-    description: "toelichting"
+    name: "Eten voor in de bus",
+    description: "Tourcie zorgt voor ontbijt"
 }, {
     id: 27,
-    name: "Sportkleding",
-    description: "toelichting"
-}, {
-    id: 28,
-    name: "Zakgeld",
-    description: "toelichting"
+    name: "Basklarinet",
 }, ];
