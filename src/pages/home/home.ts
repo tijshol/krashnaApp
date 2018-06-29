@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 import { events } from '../../assets/json/events.js';
 import { NotificationService } from '../../services/notifications';
-import { HTTP } from '@ionic-native/http';
 
 @Component({
   selector: 'page-home',
@@ -17,7 +17,7 @@ export class HomePage {
   showAllSchedule: boolean;
   showAllScheduleButton: boolean;
 
-  constructor(public http: HTTP) {
+  constructor(public http: HttpClient) {
     // Fetch event list (local)
     this.schedule = [];
     this.notificationList = [];
@@ -28,8 +28,6 @@ export class HomePage {
 
     const now = new Date();
     const today = new Date(now.getFullYear(), now.getMonth(), now.getDate());
-
-    console.log(now, today);
 
     let dates: string[] = [];
     let previousPast = true;
@@ -60,15 +58,18 @@ export class HomePage {
     this.notificationService = new NotificationService(this.http);
 
     // Fetch notifications (works only on device)
-    this.isLoading = true;
-    this.fetchNotifications().then(() => { this.isLoading = false; });
+    this.fetchNotifications();
   }
 
-  fetchNotifications() {
-    return this.notificationService.get().then(d => {
-          this.errMessage = '';
+  fetchNotifications(refreshEvent = undefined) {
+    if (refreshEvent === undefined) this.isLoading = true;
+    const onComplete = () => { 
+        refreshEvent === undefined ? this.isLoading = false : refreshEvent.complete()
+      };
+    this.errMessage = '';
+    return this.notificationService.get().subscribe(d => {
           this.notificationList = [];
-          const values = JSON.parse(d.data).values;
+          const values = d.values;
           const fields = values[0];
           for (let i = 1; i < values.length; i++) {
             const n = {open: false};
@@ -77,15 +78,13 @@ export class HomePage {
             }
             this.notificationList.push(n);
           }
-        })
-        .catch(e => {
-          if (typeof(e) === 'object' && e.error !== undefined)
-            this.errMessage = e.error.message;
-          else if (typeof(e) === 'string')
-            this.errMessage = e;
+        }, e => {
+          onComplete();
+          if (typeof(e) === 'object' && e.message !== undefined)
+            this.errMessage = e.message;
           else
             this.errMessage = 'unknown error';
-      });
+      }, onComplete);
   }
 
   openEvent(id) {
@@ -101,9 +100,7 @@ export class HomePage {
   }
 
   doRefresh(refresher) {
-    this.fetchNotifications().then(() => {
-      refresher.complete();
-    });
+    this.fetchNotifications(refresher);
   }
 
   }

@@ -1,6 +1,4 @@
-import { notifications as testResponse } from '../assets/json/notifications-test.js';
 import { apiData } from './keys/sheets_api.js';
-const TEST_MODE = false;
 
 export class NotificationService {
 
@@ -11,10 +9,6 @@ export class NotificationService {
 	}
 
 	get() {
-		if (TEST_MODE) {
-			return new Promise((resolve, reject) => { setTimeout(resolve(testResponse), 2000); });
-		} else {
-			return this.http.get(this.getApiLink(), {}, {})
-		}
+		return this.http.get(this.getApiLink());
 	}
 }
