@@ -17,37 +17,68 @@
 </ion-header>
 
 <ion-content>
-  <p text-wrap padding>
-    Here are the challenges! Complete them all and find a member of the ChallengeCie to cross them of your shirt!
-  </p>
+  <div text-wrap padding>
+    Here are the challenges! Complete them all and find a member of the ChallengeCie to cross them off your shirt!
+  </div>
+  <div text-wrap padding>
+    You can also check off the challenges below to keep track.
+  </div>
   <ion-list>
     <ion-list-header>
       <h1>General</h1>
     </ion-list-header>
-    <ion-item *ngFor="let challenge of challenges.general; let i = index">
-      <h2><ion-icon name="trophy"></ion-icon> {{ challenge.name }}</h2>
-      <p text-wrap>{{ challenge.description }}</p>
+    <div *ngFor="let challenge of challenges.general">
+    <ion-item [ngClass]="{'completed': isChecked(challenge.id)}" 
+    (click) = "toggleCheck(challenge.id);">
+      <h2>
+        <ion-icon *ngIf="!isChecked(challenge.id)" name="trophy"></ion-icon>
+        <ion-icon *ngIf="isChecked(challenge.id)" name="checkmark"></ion-icon>
+        {{ challenge.name }}
+      </h2>
+      <p [ngClass]="{ 'white-text': isChecked(challenge.id) }" text-wrap>{{ challenge.description }}</p>
     </ion-item>
+    </div>
     <ion-list-header>
       <h1>Bratislava</h1>
     </ion-list-header>
-    <ion-item *ngFor="let challenge of challenges.bratislava; let i = index">
-      <h2><ion-icon name="trophy"></ion-icon> {{ challenge.name }}</h2>
-      <p text-wrap>{{ challenge.description }}</p>
+    <div *ngFor="let challenge of challenges.bratislava">
+    <ion-item [ngClass]="{'completed': isChecked(challenge.id)}" 
+    (click) = "toggleCheck(challenge.id);">
+      <h2>
+        <ion-icon *ngIf="!isChecked(challenge.id)" name="trophy"></ion-icon>
+        <ion-icon *ngIf="isChecked(challenge.id)" name="checkmark"></ion-icon>
+        {{ challenge.name }}
+      </h2>
+      <p [ngClass]="{ 'white-text': isChecked(challenge.id) }" text-wrap>{{ challenge.description }}</p>
     </ion-item>
+    </div>
     <ion-list-header>
       <h1>Brno</h1>
     </ion-list-header>
-    <ion-item *ngFor="let challenge of challenges.brno; let i = index">
-      <h2><ion-icon name="trophy"></ion-icon> {{ challenge.name }}</h2>
-      <p text-wrap>{{ challenge.description }}</p>
+    <div *ngFor="let challenge of challenges.brno">
+    <ion-item [ngClass]="{'completed': isChecked(challenge.id)}" 
+    (click) = "toggleCheck(challenge.id);">
+      <h2>
+        <ion-icon *ngIf="!isChecked(challenge.id)" name="trophy"></ion-icon>
+        <ion-icon *ngIf="isChecked(challenge.id)" name="checkmark"></ion-icon>
+        {{ challenge.name }}
+      </h2>
+      <p [ngClass]="{ 'white-text': isChecked(challenge.id) }" text-wrap>{{ challenge.description }}</p>
     </ion-item>
+    </div>
     <ion-list-header>
       <h1>Vienna</h1>
     </ion-list-header>
-    <ion-item *ngFor="let challenge of challenges.vienna; let i = index">
-      <h2><ion-icon name="trophy"></ion-icon> {{ challenge.name }}</h2>
-      <p text-wrap>{{ challenge.description }}</p>
+    <div *ngFor="let challenge of challenges.vienna">
+    <ion-item [ngClass]="{'completed': isChecked(challenge.id)}" 
+    (click) = "toggleCheck(challenge.id);">
+      <h2>
+        <ion-icon *ngIf="!isChecked(challenge.id)" name="trophy"></ion-icon>
+        <ion-icon *ngIf="isChecked(challenge.id)" name="checkmark"></ion-icon>
+        {{ challenge.name }}
+      </h2>
+      <p [ngClass]="{ 'white-text': isChecked(challenge.id) }" text-wrap>{{ challenge.description }}</p>
     </ion-item>
+    </div>
   </ion-list>
 </ion-content>
