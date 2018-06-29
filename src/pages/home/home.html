@@ -38,6 +38,9 @@
       <button ion-button full outline *ngIf="showAllNotifications" (click)="showAllNotifications = false">Hide</button>
     </div>
   </ion-list>
+  <div padding text-center *ngIf="notificationList.length == 0" class="muted-small">
+    The news feed is empty: there is no news!
+  </div>
   <div padding><h2>Schedule</h2></div>
     <ion-card *ngIf="showAllScheduleButton">
       <ion-card-content>
