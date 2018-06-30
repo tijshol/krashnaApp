@@ -22,7 +22,7 @@ export const challenges = {
     }, {
         id: 5,
         name: "Wenen wijd",
-        description: "Full on, (Bonus: if you dont wake the people sleeping next to you)"
+        description: "Full on (Bonus: if you dont wake the people sleeping next to you)"
     }, {
         id: 6,
         name: "Brno voor de leden",
@@ -50,7 +50,7 @@ export const challenges = {
     }, {
         id: 12,
         name: "Very steddy",
-        description: "Take Teddy on an adventure (doenst count if you lose teddy), send a picture to the TedCie"
+        description: "Take Teddy on an adventure (doesn't count if you lose teddy), send a picture to the TedCie"
     }, {
         id: 13,
         name: "You blew it!",
@@ -66,7 +66,7 @@ export const challenges = {
     }, {
         id: 16,
         name: "Been there, done that",
-        description: "Perform in all 5 concerts this tour (Bratislava, Brno, Wenen (2) and Amsterdam"
+        description: "Perform in all 5 concerts this tour (Bratislava, Brno, Wenen (2) and Amsterdam)"
     }, {
         id: 17,
         name: "Tourbeer",
@@ -88,7 +88,7 @@ export const challenges = {
     }, {
         id: 21,
         name: "Nepomust",
-        description: "Visit the J.N Hummel Museum"
+        description: "Visit the J.N. Hummel Museum"
     }],
     brno: [{
         id: 22,
@@ -114,7 +114,7 @@ export const challenges = {
     }, {
         id: 27,
         name: "Travelshacker",
-        description: "Finnish the Travelshack party"
+        description: "Finish the Travelshack party"
     }, {
         id: 28,
         name: "Travelshackest",
@@ -134,7 +134,7 @@ export const challenges = {
     }, {
         id: 32,
         name: "Vinception",
-        description: "Take a picture of a U-bahn security camara which is filming you"
+        description: "Take a picture of a U-bahn security camera which is filming you"
     }, {
         id: 33,
         name: "I saw that!",

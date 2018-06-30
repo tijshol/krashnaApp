@@ -166,12 +166,13 @@ export const events = [{
   id: 25,
   name: "Rehearsal Amsterdam",
   date: "2018/07/15",
-  time: "12:00",
+  time: "13:00",
   location: "Muziekgebouw aan 't IJ, Amsterdam",
+  description: "This time will probably change. Watch the updates from the board and the app!",
 }, {
   id: 26,
   name: "Amsterdam Concert",
   date: "2018/07/15",
-  time: "14:00",
+  time: "15:00",
   location: "Muziekgebouw aan 't IJ, Amsterdam",
 }, ];

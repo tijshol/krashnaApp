@@ -21,7 +21,7 @@
     <div *ngFor="let item of packingList; let i = index">
     <ion-item [ngClass]="{ 'checked': checklist[i] }">
       <ion-checkbox type="checkbox" [(ngModel)] = "checklist[i]" (click)="saveChecklist()"></ion-checkbox>
-      <ion-label>{{ item.name }}</ion-label>
+      <ion-label text-wrap>{{ item.name }}</ion-label>
     </ion-item>
     <ion-item *ngIf="item.description">
       <p text-wrap>{{ item.description }}</p>
