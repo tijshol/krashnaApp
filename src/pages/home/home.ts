@@ -13,6 +13,7 @@ export class HomePage {
   notificationService: NotificationService;
   errMessage: string;
   isLoading: boolean;
+  thankYou: boolean;
   showAllNotifications: boolean;
   showAllSchedule: boolean;
   showAllScheduleButton: boolean;
@@ -24,6 +25,7 @@ export class HomePage {
     this.showAllNotifications = false;
     this.showAllSchedule = false;
     this.showAllScheduleButton = false;
+    this.thankYou = false;
     this.errMessage = '';
 
     const now = new Date();
@@ -54,6 +56,8 @@ export class HomePage {
         });
       }
     }
+
+    if (this.schedule.find((day) => { return !day.hide }) === undefined) { this.thankYou = true; }
 
     this.notificationService = new NotificationService(this.http);
 
