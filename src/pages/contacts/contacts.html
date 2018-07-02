@@ -23,7 +23,7 @@
     </ion-list-header>
     <ion-item *ngFor="let contact of contacts.emergency">
       <h2 text-wrap>{{ contact.name }}</h2>
-      <ion-icon name="call"></ion-icon> {{ contact.number }}
+      <ion-icon name="call"></ion-icon> <a href="tel:{{ contact.number }}">{{ contact.number }}</a>
       <p *ngIf="contact.description" text-wrap>{{ contact.description }}</p>
     </ion-item>
     <ion-list-header>
@@ -31,7 +31,7 @@
     </ion-list-header>
     <ion-item *ngFor="let contact of contacts.tourcie">
       <h2 text-wrap>{{ contact.name }}</h2>
-      <ion-icon name="call"></ion-icon> {{ contact.number }}
+      <ion-icon name="call"></ion-icon> <a href="tel:{{ contact.number }}">{{ contact.number }}</a>
     </ion-item>
     <ion-list-header>
       <h1>Members</h1>
