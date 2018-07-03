@@ -56,7 +56,7 @@ export const packingList = [{
     name: "Zwemspullen",
 }, {
     id: 16,
-    name: "Tioletspullen",
+    name: "Toiletspullen",
     description: "Shampoo en zo"
 }, {
     id: 17,
